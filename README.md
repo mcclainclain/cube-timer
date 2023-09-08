@@ -4,7 +4,7 @@ A full-fledged Rubik's Cube timer built in Rust.
 
 ## Demo
 
-<img src="demos/main.gif" width="100" height="80"/>
+![Demo here](demos/main.gif)
 
 ## Install
 
