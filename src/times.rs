@@ -13,7 +13,7 @@ pub struct Times {
 
 impl Times {
     pub fn new() -> Self {
-        let file_name = "times.json";
+        let file_name = "~/times.json";
         let path = Path::new(file_name);
         let display = path.display();
 
@@ -21,7 +21,7 @@ impl Times {
         if !path.exists() {
             let mut file = File::create(path).unwrap();
 
-            // create the base josn
+            // create the base json
             let json = r#"{
                 "bests": {
                     "single": {
