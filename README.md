@@ -3,7 +3,7 @@ A full-fledged Rubik's Cube timer built in Rust.
 
 ## Demo
 
-Demo coming soon.
+[![asciicast](https://asciinema.org/a/iVxjuNiPXM5DQiAsd5ykMX2ps.svg)](https://asciinema.org/a/iVxjuNiPXM5DQiAsd5ykMX2ps)
 
 ## TODO
 - [ ] Add TableState functionality to select different times in the list
