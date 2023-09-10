@@ -32,4 +32,6 @@ Some terminals that include this are:
 - [ ] Update scramble from personal scramble struct to official WCA scramble algorithm
 - [ ] Add more WCA cubes (4x4, 5x5, 2x2, etc.)
 - [ ] Allow for session switching
+- [ ] Add some color theme choices
 - [ ] Any other suggestions!
+
