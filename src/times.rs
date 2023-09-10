@@ -1,25 +1,32 @@
+use home;
 use serde_json::{json, Value};
 use std::fs::File;
 use std::io::{Read, Write};
-use std::path::Path;
+use std::path::PathBuf;
 
 use crate::app::Penalty;
 
 #[derive(Debug)]
 pub struct Times {
-    pub file_name: String,
+    pub file_path: PathBuf,
     pub times: Value,
 }
 
 impl Times {
     pub fn new() -> Self {
-        let file_name = "~/times.json";
-        let path = Path::new(file_name);
-        let display = path.display();
-
+        // get home directory
+        let home = home::home_dir().unwrap();
+        let file_name = "times.json";
+        // create path to file
+        let mut path = PathBuf::new();
+        path.push(home);
+        path.push(".cargo/bin/cube-times");
+        path.push(file_name);
         // If the file doesn't exist, create it.
         if !path.exists() {
-            let mut file = File::create(path).unwrap();
+            // create the folder first
+            std::fs::create_dir_all(path.parent().unwrap()).unwrap();
+            let mut file = File::create(&path).unwrap();
 
             // create the base json
             let json = r#"{
@@ -48,7 +55,7 @@ impl Times {
         }
 
         let mut file = match File::open(&path) {
-            Err(why) => panic!("couldn't open {}: {}", display, why),
+            Err(why) => panic!("couldn't open: {}", why),
             Ok(file) => file,
         };
 
@@ -59,14 +66,14 @@ impl Times {
         let times: Value = serde_json::from_str(&contents).unwrap();
 
         Self {
-            file_name: file_name.to_string(),
+            file_path: path,
             times,
         }
     }
 
     pub fn save_to_file(&self) {
         // write times to the file name, overrwrite old file
-        let mut file = File::create(&self.file_name).unwrap();
+        let mut file = File::create(&self.file_path).unwrap();
 
         let json = serde_json::to_string_pretty(&self.times).unwrap();
         file.write_all(json.as_bytes()).unwrap();
