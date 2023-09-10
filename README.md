@@ -12,6 +12,7 @@ To install, clone this repo and use cargo package manager to install it as an ex
 
 ```bash
 git clone "https://github.com/mcclainclain/cube-timer"
+cd cube-timer
 cargo install --path .
 ```
 
