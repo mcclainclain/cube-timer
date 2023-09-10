@@ -25,10 +25,11 @@ Some terminals that include this are:
 - [Konsole](https://invent.kde.org/utilities/konsole/-/merge_requests/594)
 - [Wayst](https://github.com/91861/wayst)
 
-With that being the case, this timer will not cooperate on Windows machines, so those with Windows can run using [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) (Windows Subsystem for Linux).
+With that being the case, as of now, this timer **WILL NOT COOPERATE ON WINDOWS MACHINES**.
 
 ## TODO
 
+- [ ] Find a way to remove necessity for kitty terminal protocol (aka allow windows and other terminal functionality)
 - [ ] Add TableState functionality to select different times in the list
 - [ ] Add more settings and color palette selections
 - [ ] Update scramble from personal scramble struct to official WCA scramble algorithm
