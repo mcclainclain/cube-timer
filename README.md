@@ -25,6 +25,8 @@ Some terminals that include this are:
 - [Konsole](https://invent.kde.org/utilities/konsole/-/merge_requests/594)
 - [Wayst](https://github.com/91861/wayst)
 
+With that being the case, this timer will not cooperate on Windows machines, so those with Windows can run using [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) (Windows Subsystem for Linux).
+
 ## TODO
 
 - [ ] Add TableState functionality to select different times in the list
